@@ -6074,7 +6074,7 @@ a.close.disabled {
 }
 
 .bg-primary {
-  background-color: #1abc9c !important;
+  background-color: #1daaaf !important;
 }
 
 a.bg-primary:hover, a.bg-primary:focus,
@@ -10116,7 +10116,7 @@ h3 {
   padding-bottom: 6;
 }
 .masthead .masthead-heading {
-  font-size: 2.75rem;
+  font-size: 2rem;
   line-height: 2.75rem;
 }
 .masthead .masthead-subheading {
@@ -10134,7 +10134,7 @@ h3 {
     padding-bottom: 0;
   }
   .masthead .masthead-heading {
-    font-size: 4rem;
+    font-size: 3rem;
     line-height: 3.5rem;
   }
   .masthead .masthead-subheading {
