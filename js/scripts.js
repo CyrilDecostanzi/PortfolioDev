@@ -67,5 +67,7 @@
   
   })(jQuery); // End of use strict
 
+  // Animations
+
   
   
