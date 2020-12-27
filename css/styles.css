@@ -31,6 +31,10 @@
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
+.rss-box {
+  max-width: 300px;
+}
+
 *,
 *::before,
 *::after {
@@ -6082,7 +6086,8 @@ a.close.disabled {
 }
 
 .bg-primary {
-  background-color: #1daaaf !important;
+  /* background-color: #1daaaf !important; */
+  background: url("../assets/img/pexels-frank-cone-3607542.jpg");
 }
 
 a.bg-primary:hover, a.bg-primary:focus,
@@ -10121,7 +10126,7 @@ h3 {
 }
 
 .masthead {
-  padding-top: calc(6rem + 74px);
+  padding-top: 0;
   padding-bottom: 6;
   position: relative;
   overflow: hidden;
@@ -10141,12 +10146,13 @@ h3 {
 
 @media (min-width: 992px) {
   .masthead {
-    padding-top: calc(6rem + 104px);
+    padding-top: 0;
     padding-bottom: 0;
   }
   .masthead .masthead-heading {
-    font-size: 3rem;
+    font-size: 2rem;
     line-height: 3.5rem;
+    max-width: 60%;
   }
   .masthead .masthead-subheading {
     font-size: 1.5rem;
@@ -10280,8 +10286,6 @@ form .row:first-child .floating-label-form-group {
   background: rgba(255, 255, 255, 0.329);
   animation: animate 25s linear infinite;
   bottom: -150px;
-  
-  
 }
 
 .circles li:nth-child(1){
@@ -10376,4 +10380,19 @@ form .row:first-child .floating-label-form-group {
       border-radius: 50%;
   }
 
+}
+
+/* Three Js */
+
+.scene {
+  width: 100%;
+  height: 600px;
+  z-index: 99;
+  margin-top: -100px;
+}
+
+@media(max-width: 550px){
+  .scene {
+      margin-top: -100px;
+  }
 }
