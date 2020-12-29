@@ -4,8 +4,11 @@
   
     // Smooth scrolling using jQuery easing
     $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
+      // @ts-ignore
       if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+        // @ts-ignore
         var target = $(this.hash);
+        // @ts-ignore
         target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
         if (target.length) {
           $('html, body').animate({
@@ -28,10 +31,12 @@
   
     // Closes responsive menu when a scroll trigger link is clicked
     $('.js-scroll-trigger').click(function() {
+      // @ts-ignore
       $('.navbar-collapse').collapse('hide');
     });
   
     // Activate scrollspy to add active class to navbar items on scroll
+    // @ts-ignore
     $('body').scrollspy({
       target: '#mainNav',
       offset: 80
