@@ -61,6 +61,7 @@
       });
     });
   
+  // @ts-ignore
   })(jQuery); // End of use strict
 
   // Animations

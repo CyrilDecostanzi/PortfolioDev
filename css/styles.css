@@ -230,6 +230,7 @@ th {
 label {
   display: inline-block;
   margin-bottom: 0.5rem;
+  text-align: start;
 }
 
 button {
@@ -395,7 +396,7 @@ h6, .h6 {
 }
 
 #about {
-  background-color: #0c5460;
+  background-color: #0c5360e7;
   z-index: 99;
 }
 
@@ -10150,9 +10151,11 @@ h3 {
   font-size: 2rem;
   line-height: 2.75rem;
   font-family: 'Bungee Outline', cursive;
-  letter-spacing: 3px;
-  font-weight: 100;
+  letter-spacing: 5px;
+  font-weight: 300;
   padding-bottom: 4rem;
+  background-color: rgba(0, 0, 0, 0.671);
+  padding: 40px;
 }
 .masthead .masthead-subheading {
   font-size: 1.25rem;
@@ -10169,9 +10172,9 @@ h3 {
     padding-bottom: 0;
   }
   .masthead .masthead-heading {
-    font-size: 2rem;
+    font-size: 2.1rem;
     line-height: 3.5rem;
-    max-width: 60%;
+    max-width: 100%;
   }
   .masthead .masthead-subheading {
     font-size: 1.5rem;
@@ -10265,6 +10268,10 @@ h3 {
 
 form .row:first-child .floating-label-form-group {
   border-top: 1px solid #e9ecef;
+}
+
+.help-block ul li {
+  font-size: 1.1rem;
 }
 
 .footer {

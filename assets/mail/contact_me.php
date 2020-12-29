@@ -13,9 +13,9 @@ $message = strip_tags(htmlspecialchars($_POST['message']));
 // Create the email and send the message
 $to = "contact@cyrildecostanzi.com"; // Add your email address in between the "" replacing yourname@yourdomain.com - This is where the form will send a message to.
 $subject = "Un message de votre site:  $name";
-$body = "You have received a new message from your website contact form.\n\n"."Here are the details:\n\nName: $name\n\nEmail: $email\n\nPhone: $phone\n\nMessage:\n$message";
+$body = "Un nouveau message de votre site\n\n"."Details:\n\nNom: $name\n\nEmail: $email\n\nTelephone: $phone\n\nMessage:\n$message";
 $header = "From: noreply@cyrildecostanzi.com\n"; // This is the email address the generated message will be from. We recommend using something like noreply@yourdomain.com.
-$header .= "Reply-To: $email";	
+$header .= "Repondre: $email";	
 
 if(!mail($to, $subject, $body, $header))
   http_response_code(500);

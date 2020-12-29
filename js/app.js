@@ -10,6 +10,7 @@ function init() {
   container = document.querySelector(".scene");
 
   //Create scene
+  // @ts-ignore
   scene = new THREE.Scene();
 
   const fov = 60;
@@ -18,16 +19,20 @@ function init() {
   const far = 1000;
 
   //Camera setup
+  // @ts-ignore
   camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
   camera.position.set(0, 5, 30);
 
+  // @ts-ignore
   const ambient = new THREE.AmbientLight(0x404040, 2);
   scene.add(ambient);
 
+  // @ts-ignore
   const light = new THREE.DirectionalLight(0xffffff, 2);
   light.position.set(50, 50, 100);
   scene.add(light);
   //Renderer
+  // @ts-ignore
   renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
   renderer.setSize(container.clientWidth, container.clientHeight);
   renderer.setPixelRatio(window.devicePixelRatio);
@@ -35,6 +40,7 @@ function init() {
   container.appendChild(renderer.domElement);
 
   //Load Model
+  // @ts-ignore
   let loader = new THREE.GLTFLoader();
   loader.load("../house/scene.gltf", function(gltf) {
     scene.add(gltf.scene);
