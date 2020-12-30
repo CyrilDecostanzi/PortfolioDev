@@ -1,7 +1,6 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Outline&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -43,7 +42,6 @@
 }
 
 html {
-  font-family: 'Amatic SC', cursive;
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -56,7 +54,6 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 body {
   margin: 0;
-  font-family: 'Amatic SC', cursive;
   font-size: 1.3rem;
   font-weight: 400;
   line-height: 1.5;
@@ -10153,8 +10150,7 @@ h3 {
   font-family: 'Bungee Outline', cursive;
   letter-spacing: 5px;
   font-weight: 300;
-  padding-bottom: 4rem;
-  background-color: rgba(0, 0, 0, 0.671);
+  background-color: rgba(255, 255, 255, 0.091);
   padding: 40px;
 }
 .masthead .masthead-subheading {
@@ -10166,7 +10162,7 @@ h3 {
   border-radius: 50%;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 750px) {
   .masthead {
     padding-top: 0;
     padding-bottom: 0;
@@ -10175,6 +10171,8 @@ h3 {
     font-size: 2.1rem;
     line-height: 3.5rem;
     max-width: 100%;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
   }
   .masthead .masthead-subheading {
     font-size: 1.5rem;

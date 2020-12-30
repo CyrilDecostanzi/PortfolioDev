@@ -3,12 +3,15 @@ $(function () {
     // @ts-ignore
     $(
         "#contactForm input,#contactForm textarea,#contactForm button"
+    // @ts-ignore
     ).jqBootstrapValidation({
         preventSubmit: true,
+        // @ts-ignore
         // @ts-ignore
         submitError: function ($form, event, errors) {
             // additional error messages or events
         },
+        // @ts-ignore
         // @ts-ignore
         submitSuccess: function ($form, event) {
             event.preventDefault(); // prevent default submit behaviour
@@ -23,7 +26,9 @@ $(function () {
             var message = $("textarea#message").val();
             var firstName = name; // For Success/Failure Message
             // Check for white space in name for Success/Fail message
+            // @ts-ignore
             if (firstName.indexOf(" ") >= 0) {
+                // @ts-ignore
                 firstName = name.split(" ").slice(0, -1).join(" ");
             }
             // @ts-ignore

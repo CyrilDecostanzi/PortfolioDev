@@ -49,6 +49,7 @@
           var $inputs = $form.find("input,textarea,select").not("[type=submit],[type=image]").filter(settings.options.filter);
           $inputs.trigger("submit.validation").trigger("validationLostFocus.validation");
 
+          // @ts-ignore
           $inputs.each(function (i, el) {
             var $this = $(el),
               $controlGroup = $this.parents(".control-group").first();
@@ -68,11 +69,13 @@
             }
             $form.addClass("error");
             if ($.isFunction(settings.options.submitError)) {
+              // @ts-ignore
               settings.options.submitError($form, e, $inputs.jqBootstrapValidation("collectErrors", true));
             }
           } else {
             $form.removeClass("error");
             if ($.isFunction(settings.options.submitSuccess)) {
+              // @ts-ignore
               settings.options.submitSuccess($form, e);
             }
           }
@@ -225,7 +228,9 @@
           }
 
           // Get extra ones defined on the element's data attributes
+          // @ts-ignore
           $.each($this.data(), function (i, el) {
+            // @ts-ignore
             var parts = i.replace(/([A-Z])/g, ",$1").split(",");
             if (parts[0] === "validation" && parts[1]) {
               validatorNames.push(parts[1]);
@@ -251,10 +256,12 @@
 
             // Pull out the new validator names from each shortcut
             newValidatorNamesToInspect = [];
+            // @ts-ignore
             $.each(validatorNamesToInspect, function(i, el) {
               if ($this.data("validation" + el + "Shortcut") !== undefined) {
                 // Are these custom validators?
                 // Pull them out!
+                // @ts-ignore
                 $.each($this.data("validation" + el + "Shortcut").split(","), function(i2, el2) {
                   newValidatorNamesToInspect.push(el2);
                 });
@@ -263,6 +270,7 @@
                 // Pull it out!
                 var validator = settings.builtInValidators[el.toLowerCase()];
                 if (validator.type.toLowerCase() === "shortcut") {
+                  // @ts-ignore
                   $.each(validator.shortcut.split(","), function (i, el) {
                     el = formatValidatorName(el);
                     newValidatorNamesToInspect.push(el);
@@ -282,6 +290,7 @@
 
           var validators = {};
 
+          // @ts-ignore
           $.each(validatorNames, function (i, el) {
             // Set up the 'override' message
             var message = $this.data("validation" + el + "Message");
@@ -291,6 +300,7 @@
               (
                 message
                   ? message
+                  // @ts-ignore
                   : "'" + el + "' validation failed <!-- Add attribute 'data-validation-" + el.toLowerCase() + "-message' to input to change this message -->"
               )
             ;
@@ -317,8 +327,10 @@
               }
             );
 
+            // @ts-ignore
             if (!foundValidator && settings.builtInValidators[el.toLowerCase()]) {
 
+              // @ts-ignore
               var validator = $.extend(true, {}, settings.builtInValidators[el.toLowerCase()]);
               if (hasOverrideMessage) {
                 validator.message = message;
@@ -400,6 +412,7 @@
 
           $this.bind(
             "validation.validation",
+            // @ts-ignore
             function (event, params) {
 
               var value = getValue($this);
@@ -408,8 +421,11 @@
               var errorsFound = [];
 
               $.each(validators, function (validatorType, validatorTypeArray) {
+                // @ts-ignore
                 if (value || value.length || (params && params.includeEmpty) || (!!settings.validatorTypes[validatorType].blockSubmit && params && !!params.submitting)) {
+                  // @ts-ignore
                   $.each(validatorTypeArray, function (i, validator) {
+                    // @ts-ignore
                     if (settings.validatorTypes[validatorType].validate($this, value, validator)) {
                       errorsFound.push(validator.message);
                     }
@@ -453,8 +469,10 @@
 
               var errorsFound = [];
 
+              // @ts-ignore
               $controlGroup.find("input,textarea,select").each(function (i, el) {
                 var oldCount = errorsFound.length;
+                // @ts-ignore
                 $.each($(el).triggerHandler("validation.validation", params), function (j, message) {
                   errorsFound.push(message);
                 });
@@ -532,9 +550,11 @@
         );
 
       },
+      // @ts-ignore
       collectErrors : function(includeEmpty) {
 
         var errorMessages = {};
+        // @ts-ignore
         this.each(function (i, el) {
           var $el = $(el);
           var name = $el.attr("name");
@@ -543,6 +563,7 @@
         });
 
         $.each(errorMessages, function (i, el) {
+          // @ts-ignore
           if (el.length === 0) {
             delete errorMessages[i];
           }
@@ -555,6 +576,7 @@
 
         var errorMessages = [];
 
+        // @ts-ignore
         this.each(function (i, el) {
           errorMessages = errorMessages.concat(
             $(el).triggerHandler("getValidators.validation") ? $(el).triggerHandler("validation.validation", {submitting: true}) : []
@@ -639,6 +661,7 @@
             validator.lastValue = value;
             validator.lastValid = true;
             validator.lastFinished = false;
+            // @ts-ignore
             $.ajax({
               url: validator.url,
               data: "value=" + value + "&field=" + $this.attr("name"),
@@ -679,6 +702,7 @@
 				init: function ($this, name) {
 					return {regex: regexFromString($this.data("validation" + name + "Regex"))};
 				},
+				// @ts-ignore
 				validate: function ($this, value, validator) {
 					return (!validator.regex.test(value) && ! validator.negative)
 						|| (validator.regex.test(value) && validator.negative);
@@ -686,9 +710,11 @@
 			},
 			required: {
 				name: "required",
+				// @ts-ignore
 				init: function ($this, name) {
 					return {};
 				},
+				// @ts-ignore
 				validate: function ($this, value, validator) {
 					return !!(value.length === 0  && ! validator.negative)
 						|| !!(value.length > 0 && validator.negative);
@@ -704,6 +730,7 @@
 					});
 					return {"element": element};
 				},
+				// @ts-ignore
 				validate: function ($this, value, validator) {
 					return (value !== validator.element.val() && ! validator.negative)
 						|| (value === validator.element.val() && validator.negative);
@@ -715,8 +742,11 @@
 				init: function ($this, name) {
 					return {max: $this.data("validation" + name + "Max")};
 				},
+				// @ts-ignore
 				validate: function ($this, value, validator) {
+					// @ts-ignore
 					return (parseFloat(value, 10) > parseFloat(validator.max, 10) && ! validator.negative)
+						// @ts-ignore
 						|| (parseFloat(value, 10) <= parseFloat(validator.max, 10) && validator.negative);
 				}
 			},
@@ -725,6 +755,7 @@
 				init: function ($this, name) {
 					return {min: $this.data("validation" + name + "Min")};
 				},
+				// @ts-ignore
 				validate: function ($this, value, validator) {
 					return (parseFloat(value) < parseFloat(validator.min) && ! validator.negative)
 						|| (parseFloat(value) >= parseFloat(validator.min) && validator.negative);
@@ -735,6 +766,7 @@
 				init: function ($this, name) {
 					return {maxlength: $this.data("validation" + name + "Maxlength")};
 				},
+				// @ts-ignore
 				validate: function ($this, value, validator) {
 					return ((value.length > validator.maxlength) && ! validator.negative)
 						|| ((value.length <= validator.maxlength) && validator.negative);
@@ -745,6 +777,7 @@
 				init: function ($this, name) {
 					return {minlength: $this.data("validation" + name + "Minlength")};
 				},
+				// @ts-ignore
 				validate: function ($this, value, validator) {
 					return ((value.length < validator.minlength) && ! validator.negative)
 						|| ((value.length >= validator.minlength) && validator.negative);
@@ -759,6 +792,7 @@
 					});
 					return {maxchecked: $this.data("validation" + name + "Maxchecked"), elements: elements};
 				},
+				// @ts-ignore
 				validate: function ($this, value, validator) {
 					return (validator.elements.filter(":checked").length > validator.maxchecked && ! validator.negative)
 						|| (validator.elements.filter(":checked").length <= validator.maxchecked && validator.negative);
@@ -774,6 +808,7 @@
 					});
 					return {minchecked: $this.data("validation" + name + "Minchecked"), elements: elements};
 				},
+				// @ts-ignore
 				validate: function ($this, value, validator) {
 					return (validator.elements.filter(":checked").length < validator.minchecked && ! validator.negative)
 						|| (validator.elements.filter(":checked").length >= validator.minchecked && validator.negative);
@@ -852,6 +887,7 @@
 			.toLowerCase()
 			.replace(
 				/(^|\s)([a-z])/g ,
+				// @ts-ignore
 				function(m,p1,p2) {
 					return p1+p2.toUpperCase();
 				}
@@ -892,6 +928,7 @@
     return context[func].apply(this, args);
   }
 
+	// @ts-ignore
 	$.fn.jqBootstrapValidation = function( method ) {
 
 		if ( defaults.methods[method] ) {
@@ -905,7 +942,9 @@
 
 	};
 
+  // @ts-ignore
   $.jqBootstrapValidation = function (options) {
+    // @ts-ignore
     $(":input").not("[type=image],[type=submit]").jqBootstrapValidation.apply(this,arguments);
   };
 
