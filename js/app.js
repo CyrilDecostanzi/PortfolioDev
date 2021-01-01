@@ -43,7 +43,7 @@ function init() {
   //Load Model
   // @ts-ignore
   let loader = new THREE.GLTFLoader();
-  loader.load("../house/scene.gltf", function(gltf) {
+  loader.load("../house/scene.gltf", function (gltf) {
     scene.add(gltf.scene);
     house = gltf.scene.children[0];
     fastAnimate();
@@ -52,15 +52,13 @@ function init() {
 
 function fastAnimate() {
   requestAnimationFrame(fastAnimate);
-if(house.rotation.z < 15) {
-  house.rotation.z += 0.300;
-} else {
-  house.rotation.z += 0.005;
-}
+  if (house.rotation.z < 15) {
+    house.rotation.z += 0.3;
+  } else {
+    house.rotation.z += 0.005;
+  }
   renderer.render(scene, camera);
 }
-
-
 
 init();
 
