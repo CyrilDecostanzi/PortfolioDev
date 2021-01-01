@@ -4006,6 +4006,7 @@ input[type=button].btn-block {
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
+  text-align: center;
 }
 .navbar-nav .nav-link {
   padding-right: 0;
@@ -10307,7 +10308,7 @@ form .row:first-child .floating-label-form-group {
   list-style: none;
   width: 20px;
   height: 20px;
-  background: rgba(255, 255, 255, 0.329);
+  background: rgba(255, 255, 255, 0.055);
   animation: animate 25s linear infinite;
   bottom: -150px;
 }

@@ -5,6 +5,7 @@ let camera;
 let renderer;
 let scene;
 let house;
+let fastAnim = true;
 
 function init() {
   container = document.querySelector(".scene");
@@ -45,15 +46,21 @@ function init() {
   loader.load("../house/scene.gltf", function(gltf) {
     scene.add(gltf.scene);
     house = gltf.scene.children[0];
-    animate();
+    fastAnimate();
   });
 }
 
-function animate() {
-  requestAnimationFrame(animate);
-  house.rotation.z += 0.002;
+function fastAnimate() {
+  requestAnimationFrame(fastAnimate);
+if(house.rotation.z < 15) {
+  house.rotation.z += 0.300;
+} else {
+  house.rotation.z += 0.005;
+}
   renderer.render(scene, camera);
 }
+
+
 
 init();
 
