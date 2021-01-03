@@ -22,14 +22,14 @@ function init() {
   //Camera setup
   // @ts-ignore
   camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
-  camera.position.set(0, 5, 30);
+  camera.position.set(0, 4, 22);
 
   // @ts-ignore
-  const ambient = new THREE.AmbientLight(0x404040, 2);
+  const ambient = new THREE.AmbientLight(0x000025, 2);
   scene.add(ambient);
 
   // @ts-ignore
-  const light = new THREE.DirectionalLight(0xffffff, 2);
+  const light = new THREE.DirectionalLight(0x000136, 1);
   light.position.set(50, 50, 100);
   scene.add(light);
   //Renderer
@@ -52,8 +52,8 @@ function init() {
 
 function fastAnimate() {
   requestAnimationFrame(fastAnimate);
-  if (house.rotation.z < 15) {
-    house.rotation.z += 0.3;
+  if (house.rotation.z < 30) {
+    house.rotation.z += 0.5;
   } else {
     house.rotation.z += 0.005;
   }
