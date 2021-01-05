@@ -22,13 +22,13 @@
 }
 
 .page-section .page-section-heading {
-  font-size: 2.25rem;
+  font-size: 1.9rem;
   line-height: 2rem;
 }
 
 @media (min-width: 992px) {
   .page-section .page-section-heading {
-    font-size: 2rem;
+    font-size: 1.9rem;
     line-height: 2.5rem;
   }
 }
@@ -199,9 +199,9 @@
   font-size: 2rem;
   line-height: 2.75rem;
   font-family: "Bungee Outline", cursive;
-  letter-spacing: 5px;
-  font-weight: 300;
-  background-color: rgba(255, 255, 255, 0.091);
+  letter-spacing: 4px;
+  font-weight: 700;
+  background-color: rgba(63, 93, 128, 0.589);
   padding: 40px;
 }
 
@@ -225,8 +225,10 @@
     font-size: 2.1rem;
     line-height: 3.5rem;
     max-width: 100%;
+    font-weight: 400;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
+    background-color: rgba(63, 93, 128, 0.274);
   }
 
   .masthead .masthead-subheading {
@@ -507,7 +509,7 @@ form .row:first-child .floating-label-form-group {
 .row h2 {
   color: #1a252f;
   text-shadow: 3px 3px 3px #1a252f36;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .dlCv {

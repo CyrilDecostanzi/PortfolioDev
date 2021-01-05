@@ -7033,14 +7033,16 @@
   
   .bg-primary {
     /* background-color: #1daaaf !important; */
-    background: url("../assets/img/fond.jpg");
+    background: url("../assets/img/bg-mobile.jpg");
     background-attachment: fixed;
     background-size: cover;
   }
   
-  @media(max-width: 400px) {
+  @media(max-width: 600px) {
     .bg-primary{
-      background-position: center;
+      background: url("../assets/img/bg-mobile.jpg");
+      background-size: cover;
+      background-attachment:scroll;
     }
   }
 
