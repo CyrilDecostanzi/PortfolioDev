@@ -1,3 +1,4 @@
+// @ts-nocheck
 //Variables for setup
 
 let container;
@@ -11,7 +12,7 @@ function init() {
   container = document.querySelector(".scene");
 
   //Create scene
-  // @ts-ignore
+   
   scene = new THREE.Scene();
 
   const fov = 60;
@@ -20,20 +21,20 @@ function init() {
   const far = 1000;
 
   //Camera setup
-  // @ts-ignore
+   
   camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
   camera.position.set(0, 4, 25);
 
-  // @ts-ignore
+   
   const ambient = new THREE.AmbientLight(0x000025, 2);
   scene.add(ambient);
 
-  // @ts-ignore
+   
   const light = new THREE.DirectionalLight(0x000136, 1);
   light.position.set(50, 50, 100);
   scene.add(light);
   //Renderer
-  // @ts-ignore
+   
   renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
   renderer.setSize(container.clientWidth, container.clientHeight);
   renderer.setPixelRatio(window.devicePixelRatio);
@@ -41,8 +42,9 @@ function init() {
   container.appendChild(renderer.domElement);
 
   //Load Model
-  // @ts-ignore
+   
   let loader = new THREE.GLTFLoader();
+   
   loader.load("../house/scene.gltf", function (gltf) {
     scene.add(gltf.scene);
     house = gltf.scene.children[0];
@@ -52,11 +54,7 @@ function init() {
 
 function fastAnimate() {
   requestAnimationFrame(fastAnimate);
-  if (house.rotation.z < 30) {
-    house.rotation.z += 0.5;
-  } else {
-    house.rotation.z += 0.005;
-  }
+  house.rotation.z += 0.010;
   renderer.render(scene, camera);
 }
 

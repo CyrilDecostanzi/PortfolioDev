@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta name="description" content="" />
-  <meta name="author" content="" />
+  <meta name="author" content="Cyril Decostanzi" />
   <title>Cyril Decostanzi</title>
   <!-- Favicon-->
   <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
@@ -15,7 +15,7 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
     type="text/css" />
-  <!-- Core theme CSS (includes Bootstrap)-->
+  <!-- Theme CSS (Bootstrap, AOS)-->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <link rel="stylesheet" href="css/lib.css">
   <link href="css/styles.css" rel="stylesheet" />
@@ -63,8 +63,7 @@
       <li></li>
     </ul>
     <div class="container d-flex align-items-center flex-column">
-      <!-- Masthead Avatar Image-->
-      <!-- <img class="masthead-avatar mb-5" src="assets/img/moi.jpg" alt="" /> -->
+      <!-- Masthead Image (3d)-->
       <div class="scene" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="2000"></div>
       <!-- Masthead Heading-->
       <h1 class="masthead-heading text-uppercase mb-0" data-aos="slide-up" data-aos-duration="1500">
@@ -274,7 +273,6 @@
       <!-- Contact Section Form-->
       <div class="row">
         <div class="col-lg-8 mx-auto">
-          <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19.-->
           <form id="contactForm" name="sentMessage" novalidate="novalidate">
             <div class="control-group">
               <div class="form-group floating-label-form-group controls mb-0 pb-2">
@@ -637,7 +635,7 @@
       </div>
     </div>
   </div>
-  <!-- Bootstrap core JS-->
+  <!-- Bootstrap JS-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
   <!-- Third party plugin JS-->
@@ -646,12 +644,11 @@
   <script src="assets/mail/jqBootstrapValidation.js"></script>
   <script src="assets/mail/contact_me.js"></script>
   <!-- Core theme JS-->
+  
   <script src="js/three.min.js"></script>
   <script src="js/GLTFLoader.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
+  <script>AOS.init();</script>
   <script src="js/app.js"></script>
   <script src="js/script.js"></script>
 </body>
