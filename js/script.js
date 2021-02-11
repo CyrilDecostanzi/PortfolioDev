@@ -80,3 +80,19 @@
 })(jQuery); // End of use strict
 
 // Animations
+
+//Auto-Write Text
+
+const textAnim = document.getElementById('welcomeText');
+
+new Typewriter(textAnim, {
+    loop: false,
+    deleteSpeed: 20
+})
+
+.changeDelay(50)
+.typeString("BIENVENUE SUR MON PORTFOLIO")
+.pauseFor(1000)
+.deleteChars(17)
+.typeString("DANS MON ESPACE <br/>🤓🤖")
+.start();

@@ -1,22 +1,44 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Bungee+Outline&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Neucha&display=swap');
 
 /* Three Js */
 
+.bg-primary{
+  background:url(../assets/img/fond1.jpg);
+  background-attachment:fixed;
+  background-position: center;
+  background-size:cover;
+}
+@media(max-width:600px){
+  .bg-primary{
+    background:url(../assets/img/fond1.jpg);
+    background-size:cover;
+    background-position:center; 
+    }
+  }
+
+  .bg-portfolio{
+    background:linear-gradient(to bottom,#0c5360e7 10%,#1a252f 100%);
+  }
 .profile {
   width: 100%;
-  height: 450px;
+  height: 350px;
   z-index: 99;
-  margin-top: 40px;
+  margin-top: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
-.profile img {
-  width: 200px;
-  border-radius: 50%;
+#about{
+  background-color:#0c5360e7;
+  z-index:99;
+  background:linear-gradient(to bottom,#1a252f 90%,#00000000 100%);
+}
+#welcomeText {
+  font-size: 3rem;
+  font-family: 'Neucha', cursive;
 }
 
 .page-section {
@@ -150,7 +172,9 @@
 #mainNav .navbar-nav li.nav-item a.nav-link.active {
   color: #0c5460;
 }
-
+.fa-fw {
+  vertical-align: bottom;
+}
 #mainNav .navbar-toggler {
   font-size: 80%;
   padding: 0.8rem;
@@ -356,7 +380,6 @@ form .row:first-child .floating-label-form-group {
 /* ABOUT */
 
 .row li {
-  display: inline-block;
   font-size: 1rem;
 }
 
@@ -370,6 +393,23 @@ form .row:first-child .floating-label-form-group {
 
 .aboutBox li {
   color: rgba(255, 255, 255, 0.815);
+}
+
+.aboutBlocLeft .aboutBox ul {
+  margin-top: 1rem;
+}
+.aboutBlocRight .aboutBox ul li{
+  display: inline-block;
+}
+
+.aboutBlocRight .aboutBox h4{
+  text-align: start;
+}
+
+.year {
+  color: #1a252f;
+  font-size: .8rem !important;
+  text-align: center;
 }
 
 .langages {
@@ -389,6 +429,7 @@ form .row:first-child .floating-label-form-group {
   text-shadow: 3px 3px 3px #1a252f36;
   text-transform: uppercase;
   font-size: 1rem;
+  text-align: center;
 }
 
 .row h2 {
@@ -403,8 +444,7 @@ form .row:first-child .floating-label-form-group {
 }
 
 .dlCv:hover {
-  background-color: rgba(255, 255, 255, 0.742);
-  border: none;
+  background-color: blue;
 }
 
 .aboutBloc {
@@ -413,8 +453,14 @@ form .row:first-child .floating-label-form-group {
   border-radius: 10px;
   margin: 20px;
 }
+.aboutBlocLeft ul li ul{
+  list-style:inside;
+}
+.aboutBlocLeft ul li {
+  margin-bottom: 1rem;
+}
 
-@media (max-width: 600px) {
+@media(max-width: 600px) {
   .aboutBloc {
     margin: 5px;
     margin-bottom: 1rem;
